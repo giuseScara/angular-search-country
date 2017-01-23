@@ -9,12 +9,14 @@
     "gulp-cache": "0.4.5",
     "gulp-changed": "1.3.2",
     "gulp-concat": "2.6.1",
+    "gulp-imagemin": "^3.1.1",
     "gulp-jshint": "2.0.4",
     "gulp-minify-css": "1.2.4",
     "gulp-ng-annotate": "2.0.0",
     "gulp-notify": "2.2.0",
     "gulp-rename": "1.2.2",
     "gulp-rev": "7.1.2",
+    "gulp-sourcemaps": "^2.4.0",
     "gulp-uglify": "2.0.0",
     "gulp-usemin": "0.3.26",
     "jasmine-core": "2.5.2",
@@ -32,7 +34,10 @@
     "node": ">=0.10.0"
   },
   "scripts": {
-    "test": "karma start test/karma.conf.js"
+    "test": "karma start test/karma.conf.js",
+    "compile-app": "npm install && gulp",
+    "run-app": "npm run compile-app && npm run test && json-server/json-server --watch db.json && gulp browser-sync",
+    "run-server": "json-server/json-server --watch db.json"
   },
   "dependencies": {
     "json-server": "0.9.4"
