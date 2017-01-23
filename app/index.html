@@ -18,11 +18,20 @@
 </head>
 
 <body ng-app="AppModule">
+ 
+  <search-country></search-country>
+
+  <div class="overlay" style="display: none">
+    <i class="fa fa-spinner fa-5x fa-spin"></i>
+  </div>
   <!-- build:js scripts/scripts.js -->
   <script src="../bower_components/jquery/dist/jquery.min.js"></script>
   <script src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
   <script src="../bower_components/angular/angular.min.js"></script>
   <script src="scripts/app.js"></script>
+  <script src="components/search/search.service.js"></script>
+  <script src="components/search/search.controller.js"></script>
+  <script src="components/search/search.component.js"></script>
   <!-- endbuild -->
 </body>
 

@@ -36,8 +36,8 @@
   "scripts": {
     "test": "karma start test/karma.conf.js",
     "compile-app": "npm install && gulp",
-    "run-app": "npm run compile-app && npm run test && json-server/json-server --watch db.json && gulp browser-sync",
-    "run-server": "json-server/json-server --watch db.json"
+    "run-app": "npm run compile-app && npm run test && npm run run-server && gulp browser-sync",
+    "run-server": "cd json-server && json-server --watch db.json"
   },
   "dependencies": {
     "json-server": "0.9.4"

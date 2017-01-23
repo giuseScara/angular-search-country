@@ -1,36 +1,3 @@
-body {
-  padding-top: 70px;
-}
-
-.img-center {
-  margin: 0 auto;
-}
-
-.img-patients {
-  width: 150px;
-  height: 150px;
-}
-
-.box-patient {
-  margin-bottom: 45px;
-}
-
-.space-col {
-  margin-bottom: 40px;
-}
-
-.form-filter>div {
-  margin-left: 5px;
-}
-
-.form-filter>select {
-  margin-left: 5px;
-}
-
-a {
-  cursor: pointer;
-}
-
 .overlay,
 .overlay-wrapper .overlay {
   z-index: 50;
