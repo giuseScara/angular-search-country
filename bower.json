@@ -1,0 +1,31 @@
+{
+  "name": "angular-search-country",
+  "description": "Angular Search Country",
+  "main": "index.html",
+  "keywords": [
+    "angular"
+  ],
+  "authors": [
+    "Giuseppe Scaramuzzino"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/giuseScara/angular-search-country",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/giuseScara/angular-search-country"
+  },
+
+  "dependencies": {
+    "bootstrap": "3.3.7",
+    "font-awesome": "4.7.0",
+    "angular": "1.6.0",
+    "angular-mocks": "1.6.0"
+  }
+}
