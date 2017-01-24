@@ -34,10 +34,11 @@
     "node": ">=0.10.0"
   },
   "scripts": {
-    "test": "karma start test/karma.conf.js",
+    "test": "cd test && karma start karma.conf.js",
     "compile-app": "npm install && gulp",
-    "run-app": "npm run compile-app && npm run test && npm run run-server && gulp browser-sync",
-    "run-server": "cd json-server && json-server --watch db.json"
+    "run-app": "npm run compile-app && npm run test && gulp copyDist && npm run run-server",
+    "run-server": "gulp cleanDB && cd json-server && json-server --watch db.json",
+    "run-broswer-sync": "gulp browser-sync"
   },
   "dependencies": {
     "json-server": "0.9.4"

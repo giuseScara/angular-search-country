@@ -1,17 +1,25 @@
-<form>
+<form class="form-inline">
     <div class="form-group">
-        <label for="contry">Country</label>
-        <input type="text" class="form-control" id="country" placeholder="Insert country...">
+        <label for="conutry" class="sr-only">Country</label>
+        <input type="text" style="width:300px" class="form-control" id="country" placeholder="Insert country..." ng-model="srcCtrl.itemToSearch"
+            ng-change="srcCtrl.searchItems()">
+            <div class="dropdown open" ng-show="srcCtrl.listItems.length > 0 && srcCtrl.showMenu">
+                <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
+                    <li class="dropdown-header">select country</li>
+                    <li role="presentation">
+                        <a role="menuitem" style="cursor: pointer" tabindex="-1" ng-repeat="item in srcCtrl.listItems" ng-click="srcCtrl.addItem(item)">
+                        {{ item.name }}
+                    </a>
+                    </li>
+                </ul>
+            </div>
     </div>
-    <div class="form-group">
-        <ul class="nav nav-pills" role="tablist">
-            <li role="presentation"><a>
-                Messages <span class="badge">
-                <i class="fa fa-remove"></i>
-                </span>
-                </a>
-            </li>
-        </ul>
-    </div>
-    <button type="submit" class="btn btn-success btn-block">Submit</button>
+    <button type="submit" class="btn btn-success" ng-click="srcCtrl.saveItems()">Submit</button>
 </form>
+<ul class="nav nav-pills" role="tablist" style="margin: 5% 21% 0px 21%;">
+    <li role="presentation" ng-repeat="item in srcCtrl.selectedItems track by $index" ng-if="item">
+        <span>
+            {{ item.name }} <span class="badge"> <i class="fa fa-remove"  style="cursor: pointer" ng-click="srcCtrl.removeItem(item)"></i></span>
+         </span>
+    </li>
+</ul>

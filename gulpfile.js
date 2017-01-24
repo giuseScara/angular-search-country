@@ -36,13 +36,16 @@ gulp.task('clean', function () {
 
 // Default task
 gulp.task('default', ['clean', 'bower'], function () {
-  gulp.start('copyDist', 'usemin', 'imagemin', 'copyfonts', 'copyview');
+  gulp.start('usemin', 'imagemin', 'copyfonts', 'copyview');
 });
 
 gulp.task('copyDist', function () {
-  gulp.src('dist/*').pipe(gulp.dest('json-server/public/'));
+  gulp.src('dist/**/*.*').pipe(gulp.dest('json-server/public/'));
 });
 
+gulp.task('cleanDB', function () {
+  gulp.src('json-server/originalDB/db.json').pipe(gulp.dest('json-server/'));
+});
 
 gulp.task('usemin', ['jshint'], function () {
   return gulp.src('./app/index.html')
@@ -108,6 +111,7 @@ gulp.task('browser-sync', ['default'], function () {
     'app/scripts/**/*.js',
     'app/view/**/*.js',
     'app/view/**/*.html',
+    'app/components/**/*.js',
     'app/components/**/*.html',
     'dist/**/*.*',
     'dist/**/*.html',

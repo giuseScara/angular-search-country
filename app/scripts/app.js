@@ -7,28 +7,32 @@ angular.module("AppModule").config(ConfigInterceptor);
 ConfigInterceptor.$inject = ['$httpProvider'];
 
 function ConfigInterceptor(httpProvider) {
+    toastr.options = {
+        "positionClass": "toast-bottom-right"
+    }
     httpProvider.interceptors.push(['$q', function ($q) {
         return {
             'request': function (config) {
-                angular.element(".overlay").show();
                 return config;
             },
 
             // optional method
             'requestError': function (rejection) {
-                angular.element(".overlay").hide();
+                toastr.error('Error with the request!')
                 return $q.reject(rejection);
             },
 
             // optional method
             'response': function (response) {
-                angular.element(".overlay").hide();
+                if (response.config.method == "POST") {
+                    toastr.success('Operation completed!')
+                }
                 return response;
             },
 
             // optional method
             'responseError': function (rejection) {
-                angular.element(".overlay").hide();
+                toastr.error('Operation not completed!')
                 return $q.reject(rejection);
             }
         };
