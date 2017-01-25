@@ -1,16 +1,43 @@
 {
   "country": [
     {
-      "id": 1,
       "name": "Poland",
       "isoCode": "POL"
     },
     {
-      "id": 2,
       "name": "Portugal",
       "isoCode": "PRT"
+    },
+    {
+      "name": "SWITZERLAND",
+      "isoCode": "CHE"
+    },
+    {
+      "name": "MONACO",
+      "isoCode": "MCO"
+    },
+    {
+      "name": "FRANCE",
+      "isoCode": "FRA"
+    },
+    {
+      "name": "ITALY",
+      "isoCode": "ITA"
+    },
+    {
+      "name": "MALTA",
+      "isoCode": "MLT"
+    },
+    {
+      "name": "SPAIN",
+      "isoCode": "ESP"
+    },
+    {
+      "name": "TUNISIA",
+      "isoCode": "TUN"
     }
   ],
   "selectedCountries": [
+    []
   ]
 }

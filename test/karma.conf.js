@@ -17,11 +17,13 @@ module.exports = function (config) {
     files: [
       '../bower_components/jquery/dist/jquery.min.js',
       '../bower_components/bootstrap/dist/js/bootstrap.min.js',
+      '../bower_components/toastr/toastr.min.js',
       '../bower_components/angular/angular.min.js',
       '../bower_components/angular-mocks/angular-mocks.js',
       '../app/scripts/app.js',
+      '../app/components/**/*.js',
       '../app/view/**/*.js',
-      './*/**/*.js'
+      '../test/**/*.js'
     ],
 
 
@@ -37,7 +39,7 @@ module.exports = function (config) {
 
       // setting this option will create only a single module that contains templates
       // from all the files, so you can load them all with module('foo')
-      moduleName: 'AppModule'
+      moduleName: 'myAppTemplates'
     },
 
     // preprocess matching files before serving them to the browser

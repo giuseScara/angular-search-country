@@ -8,11 +8,21 @@ function SearchFactory($http, baseURL) {
     var srcFactory = {};
 
     srcFactory.search = function (item) {
-        return $http.get(baseURL + "country", {
+        var promise = $http.get(baseURL + "country", {
             params: {
                 name_like: "^" + item
             }
         });
+
+        promise.success(function (response) {
+            return response;
+        });
+
+        promise.error(function (response) {
+            return response;
+        });
+
+        return promise;
     }; //search
 
     srcFactory.save = function (items) {

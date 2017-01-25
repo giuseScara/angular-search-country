@@ -34,9 +34,8 @@
     "node": ">=0.10.0"
   },
   "scripts": {
-    "test": "cd test && karma start karma.conf.js",
     "compile-app": "npm install && gulp",
-    "run-app": "npm run compile-app && npm run test && gulp copyDist && npm run run-server",
+    "run-app": "npm run compile-app && gulp copyDist && npm run run-server",
     "run-server": "gulp cleanDB && cd json-server && json-server --watch db.json",
     "run-broswer-sync": "gulp browser-sync"
   },
